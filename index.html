@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1">
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- Google Fonts : Barlow -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/media.css">
+<title>Sparco</title>
+</head>
+<body>
+	
+<div class="skip_navigation">
+	<a href="#buy">본문 바로가기</a>
+</div>
+
+
+<div id="wrap">
+	
+<header id="header">
+	<div class="ad">
+		<a href="#">
+			ALL ORDERS RECEVED FROM 30&#47;40 TO 1&#47;05
+		</a>
+	</div>
+	<div class="inner">
+		<h1>
+			<a href="index.html">
+				<img src="images/logo-color.svg" alt="Sparco main">
+			</a>
+		</h1>
+		<nav>
+			<ul class="main-gnb">
+				<li class="del">
+					<a href="#">
+						<img src="images/del-icon.svg" alt="close">
+					</a>
+				</li>
+				<li><a href="#">MOTORSPORT</a></li>
+				<li><a href="#">GAMING</a></li>
+				<li><a href="#">TEAMWORK</a></li>
+				<li><a href="#">LIFESTYLE</a></li>
+				<li><a href="#">COLLECTIONS</a></li>
+				<li><a href="#">OUTLET</a></li>
+			</ul>
+		</nav>
+		<div class="top-icon">
+			<ul>
+				<li><a href="#"><img src="images/search-icon.svg" alt="search"></a></li>
+				<li><a href="#"><img src="images/user-icon.svg" alt="user page"></a></li>
+				<li><a href="#"><img src="images/tool-icon.svg" alt="tools"></a></li>
+				<li><a href="#"><img src="images/cart-icon.svg" alt="cart"></a></li>
+				<li class="hambuger"><a href="#"><img src="images/ham-icon.svg" alt="open menu"></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+
+<script>
+
+const header = document.querySelector("#header");
+const headerHeight = header.getBoundingClientRect().height;
+
+document.addEventListener('scroll',()=>{
+	if(window.scrollY>headerHeight){
+		header.classList.add('active')
+	} else{
+		header.classList.remove('active')
+	}
+});	
+
+
+
+const hambuger = document.querySelector(".hambuger");
+const del = document.querySelector(".del");
+const mainGnb = document.querySelector(".main-gnb");
+
+window.addEventListener("resize",function(){//브라우져창크기를 조절했을때
+
+
+	if( window.innerWidth > (1024+17) ) { //PC
+	
+		mainGnb.style.display="flex";
+	}
+	else{ //태블릿.스마트폰
+		mainGnb.style.display="none";
+	}
+
+})
+
+hambuger.addEventListener('click', ()=>{
+	mainGnb.style.display='block';
+	mainGnb.style.transition='0.5s';
+});
+
+del.addEventListener('click', ()=>{
+	mainGnb.style.display='none';
+	mainGnb.style.transition='0.5s';
+});
+
+
+
+
+</script>
+
+
+<div id="visual">
+	<div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+		    <div class="swiper-slide">
+		    	<img src="images/visual01.jpg" alt="">
+		    	<div class="text-wrap">
+					<div class="line"></div>
+					<h2>COLLECTIONS</h2>
+					<div class="b-text">
+					<p>SPARCO</p>
+					<p>M-SPORE LIFESTYLE LINE</p>
+					</div>
+				</div>
+		    </div>
+		    <div class="swiper-slide">
+		    	<img src="images/visual02.jpeg" alt="content1">
+		    	<div class="text-wrap">
+		    		<div class="line"></div>
+					<h2>SPARCO TEAMS</h2>
+					<div>
+					<p>SPARCO</p>
+					<p>M-SPORE LIFESTYLE LINE</p>
+					</div>
+				</div>		    	
+		    </div>
+		    <div class="swiper-slide">
+		    	<img src="images/news01.jpeg" alt="content2">
+		    	<div class="text-wrap">
+		    		<div class="line"></div>
+					<h2>WINNER WINNER</h2>
+					<div>
+					<p>SPARCO</p>
+					<p>M-SPORE LIFESTYLE LINE</p>
+					</div>
+				</div>
+		    </div>
+		    <div class="swiper-slide">
+		    	<img src="images/visual04.jpeg" alt="content3">
+		    	<div class="text-wrap">
+		    		<div class="line"></div>
+					<h2>FAST AND FURIOUS</h2>
+					<div>
+					<p>SPARCO</p>
+					<p>M-SPORE LIFESTYLE LINE</p>
+					</div>
+				</div>
+		    </div>
+		    <div class="swiper-slide">
+		    	<img src="images/visual05.jpeg" alt="content4">
+		    	<div class="text-wrap">
+		    		<div class="line"></div>
+					<h2>RACE FOR GLORY</h2>
+					<div>
+					<p>SPARCO CAR ACTION</p>
+					</div>
+				</div>
+		    </div>
+	    </div>
+	    <!-- <div class="swiper-button-next"></div> -->
+	    <!-- <div class="swiper-button-prev"></div> -->
+	    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+	  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	  <!-- Initialize Swiper -->
+	  <script>
+	    var swiper = new Swiper(".mySwiper", {
+	      spaceBetween: 30,
+	      centeredSlides: true,
+	      autoplay: {
+	        delay: 4000,
+	        disableOnInteraction: false,
+	      },
+	      pagination: {
+	        el: ".swiper-pagination",
+	        clickable: true,
+	      },
+	      navigation: {
+	        nextEl: ".swiper-button-next",
+	        prevEl: ".swiper-button-prev",
+	      },
+	    });
+	  </script>
+	
+</div>
+
+
+<article id="container">
+
+	<section id="buy">
+		
+		<h3>BUY THE SPARCO PRODUCTS ONLINE</h3>
+		<span class="blind">스파르코 대표 제작물품을 만나보세요</span>
+		<ul class="buylist">
+			<li>
+				<a href="#buy">
+					<img src="images/con01.jpeg" alt="">
+					<p>MOTORSPORT</p>
+				</a>
+			</li>
+			<li>
+				<a href="#buy">
+					<img src="images/con02.jpeg" alt="">
+					<p>SAFETY</p>
+				</a>
+			</li>
+			<li>
+				<a href="#buy">
+					<img src="images/con03.jpeg" alt="">
+					<p>LIFESTYLE</p>
+				</a>
+			</li>
+			<li>
+				<a href="#buy">
+					<img src="images/con04.jpg" alt="">
+					<p>GAMING</p>
+				</a>
+			</li>
+		</ul>			
+	
+	</section>
+
+	<section id="catalog">
+
+		<h3>FOLLOW THE JOURNEY TO THE DARKER WITH SPARCO</h3>
+		<span class="blind">스파르코 카탈로그를 통해 편안한 쇼핑을 즐기시기 바랍니다</span>
+		<div class="inner">
+			<img src="images/product.jpg" alt="product books">
+			<div class="catalog-text">
+				<p>Sparco 2024</p>
+				<p>Catalogue</p>
+				<button>DISCOVER NOW</button>
+			</div>
+		</div>
+	
+	</section>
+
+	<section id="news">
+
+		<h3>THE LATEST NEWS FROM THE SPARCO WORLD</h3>
+		<span class="blind">스파르코의 뉴스를 제공합니다</span>
+		<div class="inner">
+			<ul class="news-list">
+				<li class="n-con">
+					<img src="images/news01.jpeg" alt="sparco teams">
+					<div class="text">
+						<p>Sparco joins the - 51 Racing Lab</p>
+						<p>Innovation and Passion
+							Project and celebrates the opening of the new concept store 
+							“Garage 51”
+						</p>
+					</div>
+					<div class="find">
+						<p>FIND</p>
+						<img src="images/find-arrow.svg" alt="more news">
+					</div>
+				</li>
+				<li class="n-con">
+					<img src="images/news01.jpeg" alt="sparco teams">
+					<div class="text">
+						<p>Sparco joins the - 51 Racing Lab</p>
+						<p>Innovation and Passion
+							Project and celebrates the opening of the new concept store 
+							“Garage 51”
+						</p>
+					</div>
+					<div class="find">
+						<p>FIND</p>
+						<img src="images/find-arrow.svg" alt="more news">
+					</div>
+				</li>
+				<li class="n-con">
+					<img src="images/news3.jpeg" alt="sparco teams">
+					<div class="text">
+						<p>Sparco joins the - 51 Racing Lab</p>
+						<p>Innovation and Passion
+							Project and celebrates the opening of the new concept store 
+							“Garage 51”
+						</p>
+					</div>
+					<div class="find">
+						<p>FIND</p>
+						<img src="images/find-arrow.svg" alt="more news">
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</section>
+
+	<section id="youtube">
+		<iframe width="100%" height="600" 
+		src="https://www.youtube.com/embed/L81VeUINLsU" title="Sparco World" frameborder="0"></iframe>
+	</section>
+
+</article>
+
+
+<article id="subscribe">
+	<div class="inner">
+		<div class="inner-con">
+			<div class="sub-text">
+				<h4>SUBSCRIBE TO THE NEWSLETTER</h4>
+				<p>
+					by clicking on the "subscribe" button,<br>
+					I express my free and express consent to receive newsletters<br>
+					and information on other Sparco initiatives<br>
+					as identified by the <a href="#">privacy policy</a>
+				</p>				
+			</div>
+			<fieldset>
+				<legend class="blind">회원가입하기</legend>
+				<form action="" class="sub-form">
+
+					<input type="text" placeholder="Your Name" id="name1">
+					<label for="name1" class="blind">first name</label>
+
+					<input type="text" placeholder="Your Surnname" id="name2">
+					<label for="name2" class="blind">second name</label>
+
+					<input type="email" placeholder="E - mail" id="email">
+					<label for="email" class="blind">your email</label>
+
+					<button type="submit" class="form-sub">SUBSCRIBE</button>
+				</form>
+			</fieldset>	
+		</div>
+	</div>
+</article>
+
+
+<footer id="footer">
+	<div class="inner">
+		<ul class="sitemap">
+			<li><a href="#footer"><img src="images/logo-wh.svg" alt="Sparco main"></a></li>
+			<li>
+				<p>CORPORATE</p>
+				<ul class="footer-map">
+					<li><a href="#footer">ABOUT US</a></li>
+					<li><a href="#footer">FULL EFFICENCY</a></li>
+					<li><a href="#footer">SPARCO NEWS</a></li>
+					<li><a href="#footer">TEAMS &amp; PARTNERS</a></li>
+					<li><a href="#footer">OUR SITES</a></li>
+				</ul>
+			</li>
+			<li>
+				<p>CUSTOMER SUPPORT </p>
+				<ul class="footer-map">
+					<li><a href="#footer">PAYMENT METHODS</a></li>
+					<li><a href="#footer">SHIPMENTS</a></li>
+					<li><a href="#footer">RETURN AND RERUNDS</a></li>
+					<li><a href="#footer">FAQ</a></li>
+					<li><a href="#footer">SIZE GUIDE</a></li>
+					<li><a href="#footer">SUPPORT CENTER</a></li>
+					<li><a href="#footer">ORDER STATUS AND RETURNS</a></li>
+				</ul>
+			</li>
+			<li>
+				<p>LEGAL AREA</p>
+				<ul class="footer-map">
+					<li><a href="footer">CONDITIONS OF SALE</a></li>
+					<li><a href="footer">CONDITIONS OF PURCHASE</a></li>
+					<li><a href="footer">PRIVACY &amp; COOKIES</a></li>
+					<li><a href="footer">CODE OF ETHICS</a></li>
+					<li><a href="footer">SOCIAL MEDIA POL</a></li>
+					<li><a href="#footer">WHISTLEBLOWING</a></li>
+					<li><a href="#footer">GENERAL CONDIONS</a></li>
+				</ul>
+			</li>
+			<li>
+				<p>ABOUT US</p>
+				<ul class="footer-map">
+					<li><a href="#footer">SPARCO WORLD</a></li>
+					<li><a href="#footer">TEAMS AND DRIVERS</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="copy">
+			<p>&copy;2025 Sparco S.p.A. - P.IVA 13122640157 - Tutti i diritti riservati</p>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+</div>
+
+</body>
+</html>
